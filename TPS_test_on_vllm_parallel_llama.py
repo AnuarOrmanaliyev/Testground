@@ -125,15 +125,15 @@ prompts = [
     "Write a short story about a child discovering a hidden magical world."
 ]
 
-
-
-# Define the vLLM server URL
-VLLM_SERVER_URL = "http://10.205.205.27:8000/generate"
-
-#python3 TPS_test_on_vllm_parallel_llama.py
-
 #Creating vllm server with 2 gpu
 #python3 -m vllm.entrypoints.api_server --model "meta-llama/Meta-Llama-3.1-8B-Instruct" --port 8000 --tensor-parallel-size 2
+
+# Define the vLLM server URL - Add your IP from ssh here
+VLLM_SERVER_URL = "http://10.205.205.27:8000/generate"
+
+
+
+
 
 # Define an asynchronous function to send a prompt to vLLM
 async def send_prompt(prompt, session):
